@@ -1,0 +1,111 @@
+/* Tinitz High-Tech "Vivant" Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Outfit:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --navy-primary: #002D5A;
+    --navy-glow: rgba(0, 45, 90, 0.6);
+    --emerald-accent: #10B981;
+    --emerald-glow: rgba(16, 185, 129, 0.5);
+    --brand-red: #FF0000;
+    --slate-deep: #020617;
+    --glass-white: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+    body {
+        @apply bg-[#020617] text-white/90 font-['Montserrat'] selection:bg-emerald-500/30;
+        overflow-x: hidden;
+    }
+    h1, h2, h3 { @apply font-['Outfit'] font-black tracking-tight; }
+}
+
+@layer components {
+    /* High-Tech Floating Navbar */
+    .floating-nav {
+        @apply fixed top-6 inset-x-6 z-[100] backdrop-blur-xl bg-white/[0.03] border border-white/10 rounded-full py-4 px-10 max-w-7xl mx-auto flex items-center justify-between shadow-2xl;
+    }
+
+    /* Bento Grid Master */
+    .bento-master {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Bento Card High-Tech */
+    .bento-card {
+        @apply relative glass-white border border-white/5 rounded-[2.5rem] p-8 transition-all duration-500 overflow-hidden shadow-2xl;
+    }
+
+    .bento-card::before {
+        content: '';
+        @apply absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 transition-opacity duration-500;
+    }
+
+    .bento-card:hover::before { @apply opacity-100; }
+
+    .bento-card:hover {
+        @apply -translate-y-2 border-emerald-500/20;
+        box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8), 0 0 20px rgba(16, 185, 129, 0.1);
+    }
+
+    /* Stats Accent */
+    .stat-accent {
+        @apply text-6xl font-black bg-gradient-to-r from-white to-white/40 bg-clip-text text-transparent;
+    }
+
+    /* Buttons with Glow */
+    .btn-glow-emerald {
+        @apply px-8 py-4 bg-emerald-500 text-slate-900 font-bold rounded-full transition-all duration-300 hover:scale-105 active:scale-95;
+        box-shadow: 0 0 0 0 var(--emerald-glow);
+    }
+    .btn-glow-emerald:hover {
+        box-shadow: 0 0 30px var(--emerald-glow);
+    }
+
+    .btn-glow-navy {
+        @apply px-8 py-4 bg-[#002D5A] text-white font-bold rounded-full transition-all duration-300 hover:scale-105;
+        box-shadow: 0 0 0 0 var(--navy-glow);
+    }
+    .btn-glow-navy:hover {
+        box-shadow: 0 0 30px var(--navy-glow);
+    }
+
+    /* Professional Table Clean */
+    .table-row-clean {
+        @apply border-b border-white/5 hover:bg-white/[0.02] transition-colors py-4 px-6 flex items-center justify-between;
+    }
+
+    /* Intersection Observer Base */
+    .vivant-reveal {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+        transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .vivant-reveal.active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    /* Red Alert Accent */
+    .badge-alert {
+        @apply px-3 py-1 bg-red-500/10 text-red-500 border border-red-500/20 rounded-full text-[10px] font-black uppercase tracking-tighter;
+    }
+}
+
+/* Background Animated Gradient Mesh */
+.mesh-gradient {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 0% 0%, #002D5A 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, #10B981 0%, transparent 40%);
+    opacity: 0.15;
+}

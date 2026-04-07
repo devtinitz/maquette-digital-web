@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions Elite | Tinitz</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { navy: { 800: '#002D5A' }, emerald: { 500: '#10B981' }, slate: { 950: '#020617' } } } }
+        }
+    </script>
+    <link rel="stylesheet" href="../style/app.css">
+</head>
+<body class="antialiased">
+    <div class="mesh-gradient"></div>
+
+    <nav class="floating-nav">
+        <a href="../index.html" class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10"><i data-lucide="zap" class="w-6 h-6 text-emerald-500"></i></div>
+            <span class="text-2xl font-['Outfit'] font-black tracking-tighter text-white">TINITZ</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-12 text-sm font-semibold uppercase tracking-widest">
+            <a href="../index.html">Dashboard</a>
+            <a href="solutions.html" class="text-emerald-500">Solutions</a>
+            <a href="tarifs.html" class="hover:text-emerald-500 transition-colors">Tarifs</a>
+            <a href="realisations.html" class="hover:text-emerald-500 transition-colors">Portfolio</a>
+        </div>
+        <a href="contact.html" class="btn-glow-emerald text-xs uppercase tracking-tighter">Get a Ticket</a>
+    </nav>
+
+    <main class="pt-48 pb-32 px-6">
+        <div class="container mx-auto">
+            <h1 class="text-7xl md:text-9xl mb-12 vivant-reveal"><span class="stat-accent">Seven</span> <br> <span class="opacity-80">Dimensions.</span></h1>
+            
+            <div class="bento-master">
+                <!-- 1. Billetterie (Large) -->
+                <div class="bento-card col-span-12 md:col-span-8 p-12 vivant-reveal">
+                    <div class="flex flex-col md:flex-row gap-12 items-center">
+                        <div class="md:w-1/2">
+                            <h2 class="text-4xl mb-6">Billetterie <span class="text-emerald-500">Cloud</span></h2>
+                            <p class="text-slate-400 mb-8 font-light text-lg">Infrastructure élastique native. Gestion de 100k+ transactions par seconde avec sécurisation 256-bit.</p>
+                            <a href="contact.html" class="btn-glow-navy text-xs inline-flex items-center space-x-2"><span>Start Project</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        </div>
+                        <div class="md:w-1/2 glass-white p-4 rounded-3xl border border-white/10 overflow-hidden"><img src="../assets/hero.png" alt="Cloud UI" class="w-full opacity-60 hover:opacity-100 transition-opacity"></div>
+                    </div>
+                </div>
+
+                <!-- 2. CRM (Tall) -->
+                <div class="bento-card col-span-12 md:col-span-4 p-12 bg-emerald-500/5 vivant-reveal">
+                    <h3 class="text-3xl mb-4">CRM Segmentation</h3>
+                    <p class="text-slate-500 text-sm mb-12 italic">Target your audience with surgical precision.</p>
+                    <div class="mt-auto overflow-hidden"><img src="../assets/analytics.png" alt="Analytics" class="w-full grayscale brightness-125"></div>
+                </div>
+
+                <!-- 3. Hardware (Standard) -->
+                <div class="bento-card col-span-12 md:col-span-6 p-12 vivant-reveal">
+                    <div class="flex items-center space-x-4 mb-4"><i data-lucide="monitor" class="text-emerald-500"></i> <h3 class="text-2xl">Digital Signage</h3></div>
+                    <p class="text-slate-500">Push video dynamic loop across 1,000+ screens globally.</p>
+                </div>
+
+                <!-- 4. Bornes (Standard) -->
+                <div class="bento-card col-span-12 md:col-span-6 p-12 vivant-reveal">
+                    <div class="flex items-center space-x-4 mb-4"><i data-lucide="tablet" class="text-emerald-500"></i> <h3 class="text-2xl">Interactive Kiosks</h3></div>
+                    <p class="text-slate-500">Hardware-as-a-Service premium stations for VIP check-in.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../style/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

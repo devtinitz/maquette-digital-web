@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Elite | Tinitz</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { navy: { 800: '#002D5A' }, emerald: { 500: '#10B981' }, slate: { 950: '#020617' } } } }
+        }
+    </script>
+    <link rel="stylesheet" href="../style/app.css">
+</head>
+<body class="antialiased">
+    <div class="mesh-gradient"></div>
+
+    <nav class="floating-nav">
+        <a href="../index.html" class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10"><i data-lucide="zap" class="w-6 h-6 text-emerald-500"></i></div>
+            <span class="text-2xl font-['Outfit'] font-black tracking-tighter text-white">TINITZ</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-12 text-sm font-semibold uppercase tracking-widest">
+            <a href="../index.html">Dashboard</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="tarifs.html">Tarifs</a>
+            <a href="realisations.html" class="text-emerald-500">Portfolio</a>
+        </div>
+        <a href="contact.html" class="btn-glow-emerald text-xs uppercase tracking-tighter">Get a Ticket</a>
+    </nav>
+
+    <main class="pt-48 pb-32 px-6">
+        <div class="container mx-auto">
+            <h1 class="text-7xl md:text-9xl mb-20 vivant-reveal">Realised <br> <span class="stat-accent">Impact.</span></h1>
+            
+            <div class="bento-master">
+                <!-- Project 1 (Wide) -->
+                <div class="bento-card col-span-12 md:col-span-8 group overflow-hidden vivant-reveal">
+                    <div class="flex flex-col md:flex-row h-full">
+                        <div class="md:w-1/2 p-12 flex flex-col justify-center">
+                            <span class="badge-alert mb-4 inline-block">Case Study</span>
+                            <h2 class="text-3xl mb-4 italic">TechXperience 2026</h2>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-10">Optimisation du flux de 15,000 organisations partenaires avec une automatisation CRM totale.</p>
+                            <a href="#" class="btn-glow-navy text-[10px] uppercase py-3 inline-block text-center mt-auto">Lire l'Impact</a>
+                        </div>
+                        <div class="md:w-1/2 bg-navy-900/60 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="../assets/hero.png" alt="Impact Portfolio" class="w-full opacity-40 group-hover:scale-125 transition-transform duration-[2s]">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Standard) -->
+                <div class="bento-card col-span-12 md:col-span-4 p-12 vivant-reveal flex flex-col items-center justify-center text-center">
+                    <i data-lucide="rocket" class="w-16 h-16 text-emerald-500 mb-8"></i>
+                    <h3 class="text-2xl mb-4">Live Nation EU</h3>
+                    <p class="text-slate-500 text-sm italic">Full scalability for 50k+ peaks.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../style/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

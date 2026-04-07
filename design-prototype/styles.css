@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Titillium+Web:wght@400;600;700;900&display=swap');
+
+:root {
+    --evenium-orange: #F2A341;
+    --evenium-purple: #1A0B2E;
+    --evenium-bg: #FFFFFF;
+    --evenium-text: #333333;
+    --evenium-light-grey: #F8F9FA;
+    --radius-full: 40px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--evenium-text);
+    background-color: var(--evenium-bg);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 1.1;
+}
+
+/* Header & Nav */
+.header-scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    padding: 1rem 3rem !important;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #FFF;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.header-scrolled .nav-link {
+    color: #1A0B2E;
+}
+
+/* Hero Section */
+.hero-evenium {
+    height: 100vh;
+    background-image: linear-gradient(rgba(26, 11, 46, 0.5), rgba(26, 11, 46, 0.8)), url('tinitz_evenium_hero_bg_1775534205359.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 900;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    max-width: 1000px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #FFF;
+    opacity: 0.9;
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+/* Z-Pattern Sections */
+.section-z {
+    padding: 120px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.section-z:nth-child(even) {
+    background-color: var(--evenium-light-grey);
+}
+
+.section-z:nth-child(even) .z-image {
+    order: -1;
+}
+
+.z-title {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--evenium-purple);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.z-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+/* Buttons */
+.btn-orange {
+    background-color: var(--evenium-orange);
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: var(--radius-full);
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-orange:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(242, 163, 65, 0.4);
+}
+
+/* Social Proof Ticker */
+.logo-ticker {
+    padding: 60px 0;
+    background: #FFF;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid #EEE;
+}
+
+.ticker-inner {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+}
+
+.ticker-inner img {
+    height: 40px;
+    margin: 0 60px;
+    filter: grayscale(1);
+    opacity: 0.4;
+    transition: all 0.3s;
+}
+
+.ticker-inner img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Animation utilities */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

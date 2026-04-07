@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs Elite | Tinitz</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { navy: { 800: '#002D5A' }, emerald: { 500: '#10B981' }, slate: { 950: '#020617' } } } }
+        }
+    </script>
+    <link rel="stylesheet" href="../style/app.css">
+</head>
+<body class="antialiased">
+    <div class="mesh-gradient"></div>
+
+    <nav class="floating-nav">
+        <a href="../index.html" class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-navy-800 rounded-xl flex items-center justify-center border border-white/10"><i data-lucide="zap" class="w-6 h-6 text-emerald-500"></i></div>
+            <span class="text-2xl font-['Outfit'] font-black tracking-tighter text-white">TINITZ</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-12 text-sm font-semibold uppercase tracking-widest">
+            <a href="../index.html">Dashboard</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="tarifs.html" class="text-emerald-500">Tarifs</a>
+            <a href="realisations.html" class="hover:text-emerald-500 transition-colors">Portfolio</a>
+        </div>
+        <a href="contact.html" class="btn-glow-emerald text-xs uppercase tracking-tighter">Get a Ticket</a>
+    </nav>
+
+    <main class="pt-48 pb-32 px-6">
+        <div class="container mx-auto">
+            <h1 class="text-7xl md:text-9xl mb-20 vivant-reveal">Scaling <span class="stat-accent">Pro.</span></h1>
+            
+            <div class="flex justify-center items-center space-x-6 mb-20 vivant-reveal">
+                <span class="font-medium opacity-40">Monthly</span>
+                <label for="pricing-toggle" class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="pricing-toggle" class="sr-only toggle-checkbox">
+                    <div class="w-16 h-8 bg-white/10 rounded-full border border-white/10 transition-colors toggle-label">
+                        <div class="absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-all toggle-dot"></div>
+                    </div>
+                </label>
+                <span class="font-medium">Elite Annual <span class="badge-alert ml-2">-20%</span></span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+                <!-- Essential -->
+                <div class="bento-card p-12 vivant-reveal group">
+                    <h3 class="text-2xl mb-2">Essential</h3>
+                    <div class="mb-8">
+                        <span class="text-5xl font-black price-monthly">69€</span>
+                        <span class="text-5xl font-black price-annual hidden">55€</span>
+                        <span class="text-slate-500">/mo</span>
+                    </div>
+                    <ul class="text-left space-y-5 mb-12 opacity-60">
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> <span>1,000 Tickets Monthly</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> <span>Basic CRM access</span></li>
+                    </ul>
+                    <a href="contact.html" class="btn-glow-navy w-full text-center py-4 bg-white/10 border border-white/10">Select Plan</a>
+                </div>
+
+                <!-- Scaling Pro -->
+                <div class="bento-card p-12 border-emerald-500/50 bg-emerald-500/5 shadow-emerald-500/10 scale-105 z-10 vivant-reveal">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-900 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">Most Performance</div>
+                    <h3 class="text-2xl mb-2 text-emerald-500">Scaling Elite</h3>
+                    <div class="mb-8">
+                        <span class="text-6xl font-black price-monthly">199€</span>
+                        <span class="text-6xl font-black price-annual hidden">159€</span>
+                        <span class="text-slate-500">/mo</span>
+                    </div>
+                    <ul class="text-left space-y-5 mb-12">
+                        <li class="flex items-center space-x-3"><i data-lucide="zap" class="w-4 h-4 text-emerald-500"></i> <span>Unlimited Scalable Cloud</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="zap" class="w-4 h-4 text-emerald-500"></i> <span>Advanced Data Studio</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="zap" class="w-4 h-4 text-emerald-500"></i> <span>Hardware Kit Option</span></li>
+                    </ul>
+                    <a href="contact.html" class="btn-glow-emerald w-full text-center py-4 shadow-xl">Join the Elite</a>
+                </div>
+
+                <!-- Custom -->
+                <div class="bento-card p-12 vivant-reveal group">
+                    <h3 class="text-2xl mb-2">Corporate</h3>
+                    <div class="mb-8"><span class="text-5xl font-black">Custom</span></div>
+                    <ul class="text-left space-y-5 mb-12 opacity-60">
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> <span>On-premise deployment</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> <span>24/7 Priority Support</span></li>
+                    </ul>
+                    <a href="contact.html" class="btn-glow-navy w-full text-center py-4 bg-white/10 border border-white/10">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../style/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

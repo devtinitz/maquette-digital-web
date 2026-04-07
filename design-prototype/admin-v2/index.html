@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-slate-50 overflow-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinitz Admin V2 | Refonte Ergonomique Elite</title>
+    
+    <!-- Tailwind CSS (Direct CDN for utility) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tinitz: {
+                            red: '#E14B33',
+                            blue: '#114282',
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 40px 100px -20px rgba(15, 23, 42, 0.08)',
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="theme.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="h-screen flex flex-col font-sans select-none">
+
+    <!-- Application Shell -->
+    <div id="admin-container" class="flex flex-col flex-1 overflow-hidden">
+        <!-- Rendered by app.js -->
+    </div>
+
+    <!-- Application Scripts -->
+    <script src="components.js"></script>
+    <script src="modules/vote/templates.js"></script>
+    <script src="modules/vote/logic.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

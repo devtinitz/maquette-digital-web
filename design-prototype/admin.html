@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinitz Command Center | Elite SaaS Management</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tinitz: {
+                            red: '#E14B33',
+                            blue: '#114282',
+                            dark: '#020617',
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .nav-active {
+            background: #E14B33;
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(225, 75, 51, 0.4);
+        }
+        .tab-btn-active {
+            background: white;
+            color: #E14B33;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .animate-reveal {
+            animation: reveal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(10px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .gradient-red { background: linear-gradient(135deg, #E14B33 0%, #B9321D 100%); }
+    </style>
+</head>
+<body class="h-screen overflow-hidden flex font-sans">
+
+    <!-- Sidebar Menu -->
+    <aside class="w-80 bg-white border-r border-slate-200 flex flex-col z-50">
+        <div class="p-8">
+            <div class="flex items-center gap-4 cursor-pointer group">
+                <div class="w-10 h-10 bg-tinitz-red flex items-center justify-center rounded-xl shadow-lg">
+                    <img src="assets/img/logo.png" alt="Logo" class="w-6 h-6 invert">
+                </div>
+                <span class="text-2xl font-black text-tinitz-blue tracking-tighter italic mt-1">TINITZ</span>
+            </div>
+        </div>
+
+        <nav class="flex-1 px-4 space-y-1 overflow-y-auto custom-scrollbar pt-4">
+            <p class="px-6 text-[9px] font-black uppercase tracking-[0.4em] text-slate-300 mb-4">Dashboard & Core</p>
+            <a href="#" onclick="switchTab('dash')" class="nav-btn nav-active flex items-center gap-4 px-6 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all" data-tab="dash">
+                <i data-lucide="layout-grid" class="w-5 h-5"></i>
+                Tableau de bord
+            </a>
+            <a href="#" onclick="switchTab('events')" class="nav-btn flex items-center gap-4 px-6 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest text-slate-500 hover:text-tinitz-red hover:bg-red-50 transition-all" data-tab="events">
+                <i data-lucide="calendar" class="w-5 h-5"></i>
+                Événements
+            </a>
+            
+            <p class="px-6 text-[9px] font-black uppercase tracking-[0.4em] text-slate-300 mb-4 mt-10">CMS & Expérience</p>
+            <a href="#" onclick="switchTab('cms')" class="nav-btn flex items-center gap-4 px-6 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest text-slate-500 hover:text-tinitz-red hover:bg-red-50 transition-all" data-tab="cms">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+                Gestion de Contenu
+            </a>
+            <a href="#" onclick="switchTab('bornes')" class="nav-btn flex items-center gap-4 px-6 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest text-slate-500 hover:text-tinitz-red hover:bg-red-50 transition-all" data-tab="bornes">
+                <i data-lucide="monitor" class="w-5 h-5"></i>
+                Équipements
+            </a>
+
+            <p class="px-6 text-[9px] font-black uppercase tracking-[0.4em] text-slate-300 mb-4 mt-10">Data & Marketing</p>
+            <a href="#" onclick="switchTab('vote')" class="nav-btn flex items-center gap-4 px-6 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest text-slate-500 hover:text-tinitz-red hover:bg-red-50 transition-all" data-tab="vote">
+                <i data-lucide="award" class="w-5 h-5"></i>
+                Votes & Candidats
+            </a>
+            <a href="#" onclick="switchTab('leads')" class="nav-btn flex items-center gap-4 px-6 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest text-slate-500 hover:text-tinitz-red hover:bg-red-50 transition-all" data-tab="leads">
+                <i data-lucide="users" class="w-5 h-5"></i>
+                Enregistrements
+            </a>
+            <a href="#" onclick="switchTab('sms')" class="nav-btn flex items-center gap-4 px-6 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest text-slate-500 hover:text-tinitz-red hover:bg-red-50 transition-all" data-tab="sms">
+                <i data-lucide="send" class="w-5 h-5"></i>
+                Campagnes SMS
+            </a>
+        </nav>
+
+        <div class="p-6 border-t border-slate-100">
+            <div class="flex items-center gap-4">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=114282&color=fff" class="w-10 h-10 rounded-xl shadow-lg border-2 border-white">
+                <div>
+                    <p class="text-[11px] font-black text-slate-900 uppercase">DirectionTest</p>
+                    <p class="text-[9px] text-tinitz-red font-black uppercase tracking-widest">Connecté</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Content Area -->
+    <main class="flex-1 flex flex-col min-w-0 bg-slate-50 relative pointer-events-auto">
+        <!-- Top Navigator -->
+        <header class="h-20 bg-white/80 backdrop-blur-xl border-b border-slate-200 px-10 flex items-center justify-between sticky top-0 z-40">
+            <div class="flex flex-col">
+                <h1 id="page-title" class="text-xl font-black text-tinitz-blue uppercase italic tracking-tight leading-none">Tableau de bord</h1>
+                <p id="page-subtitle" class="text-[9px] text-slate-400 font-bold uppercase tracking-[0.2em] mt-1">Plateforme Event-Tech Tinitz Elite</p>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-500 hover:text-tinitz-red transition-all relative">
+                        <i data-lucide="bell" class="w-5 h-5"></i>
+                        <span class="absolute top-2.5 right-2.5 w-2 h-2 bg-tinitz-red rounded-full ring-2 ring-white"></span>
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-500 hover:text-tinitz-red transition-all">
+                        <i data-lucide="settings" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Viewport -->
+        <div id="main-scroll" class="flex-1 overflow-y-auto p-10 custom-scrollbar">
+            <!-- Dynamic Content -->
+        </div>
+    </main>
+
+    <script>
+        const TABS = {
+            dash: {
+                title: "Tableau de Bord",
+                subtitle: "Analyse globale de votre parc événementiel",
+                html: `
+                    <div class="animate-reveal grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                        <div class="bg-slate-900 p-8 rounded-[2.5rem] shadow-2xl text-white transform hover:translate-y-[-5px] transition-all">
+                            <p class="text-[9px] font-black uppercase tracking-widest opacity-50 mb-6">Bornes Actives</p>
+                            <p class="text-5xl font-black">167</p>
+                        </div>
+                        <div class="gradient-red p-8 rounded-[2.5rem] shadow-2xl text-white transform hover:translate-y-[-5px] transition-all">
+                            <p class="text-[9px] font-black uppercase tracking-widest opacity-50 mb-6">Slides Diffusion</p>
+                            <p class="text-5xl font-black">62</p>
+                        </div>
+                         <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 transform hover:translate-y-[-5px] transition-all">
+                            <p class="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-6">Total Inscriptions</p>
+                            <p class="text-5xl font-black text-tinitz-blue">4,280</p>
+                        </div>
+                         <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 transform hover:translate-y-[-5px] transition-all">
+                            <p class="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-6">ROI Sponsors</p>
+                            <p class="text-5xl font-black text-emerald-600">92%</p>
+                        </div>
+                    </div>
+                `
+            },
+            cms: {
+                title: "Gestion de Contenu (Digital Signage)",
+                subtitle: "Créez vos slides, alertes et articles de diffusion",
+                html: `
+                    <div class="animate-reveal space-y-10">
+                        <!-- CMS Sub-Tabs -->
+                        <div class="bg-slate-200/50 p-1.5 rounded-2xl flex gap-1 w-fit mb-10">
+                            <button onclick="switchCmsTab('slides')" id="btn-slides" class="cms-tab-btn tab-btn-active px-8 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all">Slides Diffusion</button>
+                            <button onclick="switchCmsTab('alerts')" id="btn-alerts" class="cms-tab-btn px-8 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest text-slate-500 transition-all">Alertes Marquee</button>
+                            <button onclick="switchCmsTab('articles')" id="btn-articles" class="cms-tab-btn px-8 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest text-slate-500 transition-all">Articles Promo</button>
+                        </div>
+
+                        <div id="cms-viewport" class="space-y-8">
+                            <!-- Injected by switchCmsTab -->
+                        </div>
+                    </div>
+                `
+            },
+            sms: {
+                title: "Campagnes SMS",
+                subtitle: "Communication groupée vers vos participants",
+                html: `
+                    <div class="animate-reveal bg-white p-10 rounded-4xl border border-slate-200">
+                        <div class="flex flex-col gap-8 max-w-3xl">
+                            <div class="space-y-4">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400">Groupe Destinataire *</label>
+                                <select class="w-full bg-slate-50 border-slate-100 rounded-2xl p-4 text-xs font-black"><option>Tous les groupes</option><option>VIP uniquement</option></select>
+                            </div>
+                            <div class="space-y-4">
+                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400">Message (max 250 caractères) *</label>
+                                <textarea class="w-full bg-slate-50 border-slate-100 rounded-2xl p-4 text-sm font-medium h-40" placeholder="Entrez votre message ici..."></textarea>
+                            </div>
+                            <button class="stats-card-orange py-5 text-white font-black text-[11px] uppercase tracking-widest rounded-2xl shadow-2xl">Envoyer le SMS</button>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        const CMS_VIEWS = {
+            slides: `
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden group">
+                        <div class="h-48 bg-slate-100 flex items-center justify-center relative">
+                            <i data-lucide="image" class="w-12 h-12 text-slate-300"></i>
+                            <div class="absolute top-4 right-4"><span class="px-3 py-1 bg-emerald-500 text-white rounded-full text-[8px] font-black uppercase">Actif</span></div>
+                        </div>
+                        <div class="p-6">
+                            <h5 class="text-sm font-black text-slate-900 uppercase mb-4 tracking-tighter">Slide Opening Keynote</h5>
+                            <button class="w-full py-3 bg-slate-950 text-white rounded-xl text-[9px] font-black uppercase tracking-widest">Éditer le visuel</button>
+                        </div>
+                    </div>
+                    <button class="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl flex flex-col items-center justify-center p-8 hover:border-tinitz-red transition-all group">
+                        <i data-lucide="plus" class="w-10 h-10 text-slate-300 group-hover:text-tinitz-red mb-4"></i>
+                        <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Nouveau Slide</span>
+                    </button>
+                </div>
+            `,
+            alerts: `
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                    <table class="w-full text-left">
+                        <thead class="text-[9px] font-black uppercase tracking-widest text-slate-300 border-b border-slate-50">
+                            <tr><th class="p-6">Libellé</th><th class="p-6">Priorité</th><th class="p-6">Diffusion</th><th class="p-6 text-right">Action</th></tr>
+                        </thead>
+                        <tbody class="text-[11px] font-bold text-slate-700 divide-y divide-slate-50">
+                            <tr>
+                                <td class="p-6">Urgence : Changement de salle 4B</td>
+                                <td class="p-6"><span class="text-red-600 uppercase">Haute</span></td>
+                                <td class="p-6"><span class="w-2 h-2 bg-emerald-500 rounded-full inline-block mr-2 animate-pulse"></span> Live</td>
+                                <td class="p-6 text-right"><button class="text-tinitz-red uppercase text-[9px]">Désactiver</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            `,
+            articles: `
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 flex items-center gap-6 group hover:border-tinitz-red transition-all">
+                        <div class="w-20 h-20 bg-slate-100 rounded-2xl flex-shrink-0"></div>
+                        <div class="flex-1">
+                            <h5 class="font-black text-slate-900 uppercase text-xs mb-1">Interview Sponsor : Global Tech</h5>
+                            <p class="text-[10px] text-slate-400 leading-relaxed font-bold uppercase tracking-widest">Cible: Bornes TDISPLAY • Status: Publié</p>
+                        </div>
+                        <i data-lucide="edit-3" class="w-5 h-5 text-slate-300"></i>
+                    </div>
+                    <button class="w-full py-5 border-2 border-dashed border-slate-200 rounded-3xl text-slate-400 font-black text-[10px] uppercase tracking-widest hover:border-tinitz-red hover:text-tinitz-red transition-all">+ Créer un article promo</button>
+                </div>
+            `
+        };
+
+        function switchCmsTab(id) {
+            document.querySelectorAll('.cms-tab-btn').forEach(btn => {
+                btn.classList.remove('tab-btn-active', 'text-tinitz-red');
+                btn.classList.add('text-slate-500');
+            });
+            const activeBtn = document.getElementById('btn-' + id);
+            activeBtn.classList.add('tab-btn-active');
+            activeBtn.classList.remove('text-slate-500');
+            activeBtn.classList.add('text-tinitz-red');
+
+            document.getElementById('cms-viewport').innerHTML = CMS_VIEWS[id];
+            lucide.createIcons();
+        }
+
+        function switchTab(id) {
+            const container = document.getElementById('main-scroll');
+            const data = TABS[id];
+            
+            document.getElementById('page-title').innerText = data.title;
+            document.getElementById('page-subtitle').innerText = data.subtitle;
+            container.innerHTML = data.html;
+
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('nav-active'));
+            document.querySelector(`[data-tab="${id}"]`).classList.add('nav-active');
+
+            if(id === 'cms') switchCmsTab('slides');
+            
+            lucide.createIcons();
+            container.scrollTop = 0;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => switchTab('dash'));
+    </script>
+</body>
+</html>
