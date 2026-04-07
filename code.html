@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tinitz | Redécouvrez la joie d'organiser vos événements</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#002117",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#006c49",
+                    "surface-bright": "#f7f9fb",
+                    "primary-container": "#10b981",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "primary": "#006c49",
+                    "on-surface": "#191c1e",
+                    "on-background": "#191c1e",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#45dfa4",
+                    "on-primary-container": "#00422b",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-fixed": "#002114",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eceef0",
+                    "inverse-primary": "#4edea3",
+                    "on-secondary-fixed-variant": "#0b513d",
+                    "on-primary-fixed-variant": "#005236",
+                    "secondary": "#2b6954",
+                    "outline-variant": "#bbcabf",
+                    "tertiary-container": "#00b982",
+                    "on-error": "#ffffff",
+                    "outline": "#6c7a71",
+                    "surface-dim": "#d8dadc",
+                    "on-secondary-container": "#306d58",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#6ffbbe",
+                    "secondary-fixed": "#b0f0d6",
+                    "tertiary": "#006c4b",
+                    "tertiary-fixed": "#68fcbf",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005137",
+                    "surface-container-low": "#f2f4f6",
+                    "surface": "#f7f9fb",
+                    "on-tertiary-container": "#00422c",
+                    "secondary-container": "#adedd3",
+                    "background": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface-variant": "#3c4a42",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#4edea3",
+                    "on-primary-fixed": "#002113",
+                    "secondary-fixed-dim": "#95d3ba"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f7f9fb; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); }
+        .hero-curve { border-radius: 0 0 100% 100% / 0 0 10% 10%; }
+        .bento-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .bento-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 108, 73, 0.08); }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_20px_40px_rgba(0,108,73,0.05)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-[#006c49] dark:text-[#10B981]">
+                Tinitz
+            </div>
+<div class="hidden md:flex items-center gap-8 font-manrope font-medium text-sm">
+<a class="text-[#10B981] font-bold border-b-2 border-[#10B981] pb-1" href="#">Solutions</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-[#10B981] transition-colors" href="#">Tarifs</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-[#10B981] transition-colors" href="#">Ressources</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-[#10B981] transition-colors" href="#">À propos</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-manrope font-medium text-sm text-slate-600 hover:text-[#10B981] transition-colors">Connexion</button>
+<button class="bg-[#10B981] text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-sm hover:translate-y-[-2px] transition-all active:scale-95">Démo gratuite</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 bg-white hero-curve overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<span class="inline-block py-1 px-4 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase">L'excellence événementielle</span>
+<h1 class="text-5xl md:text-7xl font-extrabold text-primary leading-[1.1] tracking-tight">
+                    Redécouvrez la joie d'organiser vos <span class="text-[#10B981]">événements</span>
+</h1>
+<p class="text-lg text-slate-600 max-w-lg leading-relaxed">
+                    Une plateforme intuitive conçue pour les architectes d'expériences. Simplifiez chaque étape, de la conception à la réussite finale.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-[#10B981] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_30px_rgba(16,185,129,0.3)] hover:translate-y-[-2px] transition-all active:scale-95">
+                        Demander une démo
+                    </button>
+<button class="border-2 border-outline-variant/30 text-primary px-8 py-4 rounded-full font-bold hover:bg-surface-container-low transition-all">
+                        Voir les solutions
+                    </button>
+</div>
+<div class="flex items-center gap-4 pt-6 text-slate-500 text-sm">
+<div class="flex -space-x-2">
+<img alt="Utilisateur" class="w-8 h-8 rounded-full border-2 border-white" data-alt="portrait of a confident female event manager smiling in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBklT4-KUmjhOoHNJMPxIu5i4DB4bTIUxJsmI3LNcjXFBig5-bNXZUSSnLW500PeG4_29XCtDFduWDZa6IV1CEKuORCY59c1ZscVEGsZFBFHinB3RqUUOGV4pQa_9_v3seVAmg0b_4h9D_LbyibGvZfyW1FwaTOzFtXL-Vi6cNeO3KIueDI06s56zatR7VfzgCA_PTTR6ERgYWbxq5uUATyTdjxc3_IwvS-md8gKZKVEkldz34ku-ImszCOlkos-0eVXAoLlBAKEbB"/>
+<img alt="Utilisateur" class="w-8 h-8 rounded-full border-2 border-white" data-alt="portrait of a creative professional man with glasses in a bright architectural space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX8Af2SDdejumgueV6pZVlgKrp8KtEnhuDtXU9i_PLMBOPq5otkR5v3jH9frrdZwIvQ5atLrsZzq_6PqXqwFFjyn8SQ-29xvwmdK5sRWJYIp2tqd04pSCoqJNuQMF_WTL_zLDO7a2my2lLuIqua5BPNOZzHnDZKM74sEJtp7b_pqo5KghI5uU-rkrNCUclbe0HlMC48gd4Ls_bhsRApizXVUEdTeMdEpBT8wS0P_kQQqERl7JHpi8F5ozELq2vC6SFccym_Nuj4IAj"/>
+<img alt="Utilisateur" class="w-8 h-8 rounded-full border-2 border-white" data-alt="close-up of a happy person at a corporate networking event with soft background lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWm_5rN3-iKWiGsQcmFKg2Zy376oG3o2e_bfjvRcXGwoTXkcsNWkUjU1HUiCxsN5zDdCOjHFKDFW-QPU_BlEmHkkZ5_uaJP7HKqC_tGzwlgS30cLHu2RwEyuhEpy4X5Pq6PkFaF2mPaqn2jkRoqstirVcsepyRbBwdFEFqiiyK4QRtoaioIzsRzJUBeBhmbgDUb_Tq1V4V7V7gXbIYLaNQN9yC3r2mLB18O2Z6XgAqI0KV_yS3zulfcUS9DH-702EDBt4fUcLTtl9X"/>
+</div>
+<span>Rejoint par +500 organisateurs passionnés</span>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl"></div>
+<img alt="Événement réussi" class="relative z-10 rounded-xl shadow-2xl transform rotate-1 object-cover aspect-[4/5]" data-alt="vibrant indoor event space with elegant lighting, modern decor, and people engaged in meaningful conversation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC74ukpH2GOZCalnrm_mepHX1nt3lzwtrb6PT5NhbGPHu1rQ8pMBeN_TTNf36eYNYtkakasGBWI_rdQ3NqFYtUJYurHWMLyG942gH6HFVMs_slAEJY66xjj0pYMf0sRLwsF7WC8jTAnTCzRjbro-O7DugK-XyvzLQcbj9GU8VVTpwikhjVhoS2NDo7yp2er7LxJqe-JITSqEaeA-i5axn5hwMIN7lBuCsYTERBJ1LkMYVEUXyXyIaE73Vd17hUIsrVKhRBJlYkdzGPH"/>
+<div class="absolute bottom-10 -left-6 z-20 glass-nav p-4 rounded-lg shadow-xl flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-bold text-sm">Événement Validé</p>
+<p class="text-xs text-slate-500">100% de satisfaction</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Social Proof Section -->
+<section class="py-16 bg-surface-bright">
+<div class="max-w-7xl mx-auto px-8">
+<p class="text-center text-slate-400 font-medium mb-10 tracking-widest uppercase text-xs">Avec la confiance de...</p>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-12 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex justify-center font-bold text-2xl text-slate-400 italic">LOGOTYPE</div>
+<div class="flex justify-center font-bold text-2xl text-slate-400 italic">CREATIVE</div>
+<div class="flex justify-center font-bold text-2xl text-slate-400 italic">HORIZON</div>
+<div class="flex justify-center font-bold text-2xl text-slate-400 italic">SPHERE</div>
+<div class="flex justify-center font-bold text-2xl text-slate-400 italic">EVENTO</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid 'Pourquoi Tinitz ?' -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16 space-y-4">
+<span class="text-[#10B981] font-bold text-sm uppercase tracking-widest">Valeurs</span>
+<h2 class="text-4xl font-extrabold text-primary tracking-tight">L'art de l'organisation maîtrisée</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+<!-- Simplicité -->
+<div class="md:col-span-2 md:row-span-1 bento-card bg-surface-container-lowest p-8 rounded-lg flex flex-col justify-between group">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-primary-container/10 rounded-2xl flex items-center justify-center text-[#10B981]">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</div>
+<span class="text-slate-300 group-hover:text-[#10B981] transition-colors material-symbols-outlined text-4xl">north_east</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Simplicité Intuitive</h3>
+<p class="text-slate-500 text-sm">Une interface pensée pour que la technologie disparaisse au profit de votre créativité.</p>
+</div>
+</div>
+<!-- Harmonie -->
+<div class="md:col-span-1 md:row-span-2 bento-card bg-surface-container-lowest p-8 rounded-lg flex flex-col group overflow-hidden relative">
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div class="w-12 h-12 bg-primary-container/10 rounded-2xl flex items-center justify-center text-[#10B981]">
+<span class="material-symbols-outlined text-3xl">synagogue</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Harmonie Globale</h3>
+<p class="text-slate-500 text-sm">Synchronisez vos équipes et vos prestataires sur une plateforme unique et cohérente.</p>
+</div>
+</div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#10B981]/5 rounded-full"></div>
+</div>
+<!-- Stratégie -->
+<div class="md:col-span-1 md:row-span-1 bento-card bg-surface-container-lowest p-8 rounded-lg flex flex-col justify-between group">
+<div class="w-12 h-12 bg-primary-container/10 rounded-2xl flex items-center justify-center text-[#10B981]">
+<span class="material-symbols-outlined text-3xl">query_stats</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Stratégie Data</h3>
+<p class="text-slate-500 text-sm">Prenez des décisions éclairées grâce à nos outils d'analyse prédictive.</p>
+</div>
+</div>
+<!-- Support -->
+<div class="md:col-span-1 md:row-span-1 bento-card bg-primary p-8 rounded-lg flex flex-col justify-between group text-white">
+<div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Support Dédié</h3>
+<p class="text-white/70 text-sm">Une équipe d'experts à vos côtés 24/7 pour garantir le succès de vos projets.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solutions Grid -->
+<section class="py-24 bg-white relative">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="space-y-4">
+<span class="text-[#10B981] font-bold text-sm uppercase tracking-widest">Solutions</span>
+<h2 class="text-4xl font-extrabold text-primary tracking-tight">Tout pour vos événements</h2>
+</div>
+<a class="text-[#10B981] font-bold flex items-center gap-2 hover:underline" href="#">
+                    Découvrir toutes les fonctionnalités <span class="material-symbols-outlined">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Org -->
+<div class="group cursor-pointer">
+<div class="rounded-lg overflow-hidden mb-6 aspect-square bg-slate-100">
+<img alt="Organisation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="top-down shot of a minimalist workstation with a digital tablet showing a clean event planning dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFnc3nPYgfudOArMSm4fwhms8PLANQdExrg5TeICs70ibElLSLGtVx40xztfLdZtj7f6aHRGCGfg4tqG8Di0wGeDn9jZN9PqpUpGKXlm5EOqt05-0SrumLH0IPifb1mOR654upadtaeTwjsZ_2stiEdVTBYCCM-hlPxlxc71-DLGkXW1fKOqZj6F9TazoO8slKcWBCa9OvjRepyzHLEB_Jld8lXZjLm8YxDnPl_fuwQew8oBDne65M22RP5zlYi1L9pEez1n2-f-xN"/>
+</div>
+<h3 class="text-xl font-bold mb-3 group-hover:text-[#10B981] transition-colors">Organisation</h3>
+<p class="text-slate-500 text-sm leading-relaxed">Gérez vos budgets, planning et logistique en un seul coup d'œil.</p>
+</div>
+<!-- Inscription -->
+<div class="group cursor-pointer">
+<div class="rounded-lg overflow-hidden mb-6 aspect-square bg-slate-100">
+<img alt="Inscription" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="professional registration desk at a conference with sleek digital tablets and elegant floral arrangements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_KyKODakrWuwqfsSaRFkuqqphfYGOjDAJG5RES3lQqSAj63_UDY8FCWqQZbTQrfqQOwTKUQZSeH_uRK2JefeW8RQqW5bCafWZcQDnvty3cX1wbxJzgzzIwM-6Y3upR8BQDIbmTsPtqGCN5coXUGvcanP0J8zmSOyz_w-Bu48P6SyEunaVSwUVbcLDlNSHae6j3rgVYnPv9RWSF4hq0fNDrLAK3kq0G3AycIbDwsgnCbhNfhu6fyz1GihmBctMdhp2bLyCoGC130f_"/>
+</div>
+<h3 class="text-xl font-bold mb-3 group-hover:text-[#10B981] transition-colors">Inscription</h3>
+<p class="text-slate-500 text-sm leading-relaxed">Formulaires personnalisés et billetterie fluide pour vos participants.</p>
+</div>
+<!-- Accueil -->
+<div class="group cursor-pointer">
+<div class="rounded-lg overflow-hidden mb-6 aspect-square bg-slate-100">
+<img alt="Accueil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern tech office reception area with bright open space and a warm welcoming atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8M6Mp3PeItra-kk4O6L12Ccjq2N0P0xYKHI8IvscKfHnlWnciwSkHIFftb3ma279ie0gRbKdq9XigkEl_Jx-uzLpUwDSQAJdHzqqQ8d3HnsqmYV9ZlIlBHc9svyEezEJqhdlgi3K0-Ip6l4Z65GSwcD-ExWPahkCDQTs_EQbHsmQUMZPY6fRmmyfq0L1fyRYz3JOcA4w4Vu-qTwV4H4a3ztvkxFfxZaHBlTvG-WRJny0Z3vyxLgtpx04tjkKJ7E2EG1qIxlkOH1Ma"/>
+</div>
+<h3 class="text-xl font-bold mb-3 group-hover:text-[#10B981] transition-colors">Accueil</h3>
+<p class="text-slate-500 text-sm leading-relaxed">Check-in ultra-rapide et impression de badges en temps réel.</p>
+</div>
+<!-- Networking -->
+<div class="group cursor-pointer">
+<div class="rounded-lg overflow-hidden mb-6 aspect-square bg-slate-100">
+<img alt="Networking" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="group of creative professionals talking enthusiastically in a modern breakout space with natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBESqN_34DtgDGxqCiF1Dh5dpBykGoZBz4muQwFz9fUl69_kMUoeTXfAaMlJg5m4ev-VAKvvH8dHxrNITQdHd2OGMoh0qCPSyG_dp1Pxs7CeOkH5FAqdm3dqmbt8aupn93Bzx20-kbtGOSFTyNCIznwUnYchKitFf7xTQNU4ZLX5TzQXqfgLWxemfh6hT6Vo2lHDV4FyadptkeUV7d2pauuTG4uwMh_Zi-6DeBdak8a5RXW5AM447n8DeoPCgb59atPSlIwa0JvSCWI"/>
+</div>
+<h3 class="text-xl font-bold mb-3 group-hover:text-[#10B981] transition-colors">Networking</h3>
+<p class="text-slate-500 text-sm leading-relaxed">Boostez les interactions entre vos invités avec notre app dédiée.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-3xl font-extrabold text-center mb-16">Ils créent l'exceptionnel avec nous</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-sm border border-outline-variant/10">
+<div class="flex gap-1 mb-4 text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-slate-600 mb-6 italic">"Tinitz a totalement transformé notre manière de gérer les sommets annuels. Le gain de temps est phénoménal."</p>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold text-sm">Sophie Martin</p>
+<p class="text-xs text-slate-400">Directrice Event, LuxCorp</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm border border-outline-variant/10 scale-105 transform z-10 ring-2 ring-[#10B981]/10">
+<div class="flex gap-1 mb-4 text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-slate-600 mb-6 italic">"L'interface est d'une beauté et d'une fluidité rares. Nos participants adorent l'application de networking."</p>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold text-sm">Marc Leroy</p>
+<p class="text-xs text-slate-400">Fondateur, InnovateConf</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm border border-outline-variant/10">
+<div class="flex gap-1 mb-4 text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-slate-600 mb-6 italic">"Le support client est incroyable. On se sent vraiment accompagnés, peu importe l'ampleur du projet."</p>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold text-sm">Clara Valet</p>
+<p class="text-xs text-slate-400">Organisatrice Indépendante</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-8">
+<div class="max-w-5xl mx-auto bg-primary rounded-xl overflow-hidden relative shadow-2xl">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute -top-20 -left-20 w-80 h-80 bg-white rounded-full"></div>
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-white rounded-full"></div>
+</div>
+<div class="relative z-10 px-12 py-16 text-center text-white space-y-8">
+<h2 class="text-4xl font-extrabold tracking-tight">Prenez rendez-vous pour discuter de votre prochain événement</h2>
+<p class="text-lg text-white/80 max-w-2xl mx-auto">Découvrez comment Tinitz peut élever vos standards d'organisation et offrir une expérience mémorable à vos invités.</p>
+<div class="flex justify-center gap-4">
+<button class="bg-[#10B981] text-white px-10 py-4 rounded-full font-bold shadow-xl hover:translate-y-[-2px] transition-all">Réservez maintenant</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#f7f9fb] dark:bg-slate-950 rounded-t-[3rem] mt-20">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-12 py-16 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1 space-y-4">
+<div class="text-xl font-bold text-[#006c49] dark:text-[#10B981]">Tinitz</div>
+<p class="font-manrope text-sm leading-relaxed text-slate-500 dark:text-slate-400">L'art de l'organisation événementielle.</p>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-sm text-slate-900 dark:text-white">Plateforme</span>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-[#10B981] transition-colors" href="#">Solutions</a>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-[#10B981] transition-colors" href="#">Tarifs</a>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-[#10B981] transition-colors" href="#">Ressources</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-sm text-slate-900 dark:text-white">Société</span>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-[#10B981] transition-colors" href="#">À propos</a>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-[#10B981] transition-colors" href="#">Newsletter</a>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-[#10B981] transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-sm text-slate-900 dark:text-white">Légal</span>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-[#10B981] transition-colors" href="#">Mentions Légales</a>
+<a class="font-manrope text-sm text-slate-500 dark:text-slate-400 hover:text-[#10B981] transition-colors" href="#">Confidentialité</a>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 py-8 px-12 max-w-7xl mx-auto">
+<p class="font-manrope text-xs text-slate-400 text-center">© 2024 Tinitz. Tous droits réservés.</p>
+</div>
+</footer>
+</body></html>
