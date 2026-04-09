@@ -1,9 +1,11 @@
+<script setup>
+import PageTransition from './components/PageTransition.vue'
+</script>
+
 <template>
+  <PageTransition />
   <router-view />
 </template>
-
-<script setup>
-</script>
 
 <style>
 /* Global Styles if needed */

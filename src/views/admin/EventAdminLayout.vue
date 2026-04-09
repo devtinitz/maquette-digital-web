@@ -1,6 +1,9 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import EventSidebar from '../../components/admin/admin-panel/EventSidebar.vue'
 import TopBar from '../../components/admin/TopBar.vue'
+
+const route = useRoute()
 </script>
 
 <template>
@@ -25,17 +28,27 @@ import TopBar from '../../components/admin/TopBar.vue'
       <main class="flex-1 p-10 overflow-y-auto">
         <router-view v-slot="{ Component }">
           <transition 
-            enter-active-class="transition duration-400 ease-out"
-            enter-from-class="opacity-0 translate-x-4"
-            enter-to-class="opacity-100 translate-x-0"
-            leave-active-class="transition duration-300 ease-in"
-            leave-from-class="opacity-100 translate-x-0"
-            leave-to-class="opacity-0 -translate-x-4"
+            name="fade-slide"
+            mode="out-in"
           >
-            <component :is="Component" />
+            <component :is="Component" :key="route.path" />
           </transition>
         </router-view>
       </main>
     </div>
   </div>
 </template>
+
+<style scoped>
+.fade-slide-enter-active, .fade-slide-leave-active {
+  transition: all 0.3s ease-out;
+}
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateX(10px);
+}
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+</style>

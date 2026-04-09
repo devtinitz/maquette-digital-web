@@ -64,11 +64,11 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="testimonials" class="py-32 bg-tinitz-slate-950 text-white overflow-hidden">
+  <section id="testimonials" class="py-32 bg-slate-50 text-tinitz-navy overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-16">
         <h2 class="text-xs font-black uppercase tracking-[0.4em] text-tinitz-red mb-6">Social Proof</h2>
-        <h3 class="text-4xl md:text-6xl font-black leading-tight">L'avis des Architectes <br/> <span class="text-white/40 italic font-light">d'Expérience</span>.</h3>
+        <h3 class="text-4xl md:text-6xl font-black leading-tight">L'avis des Architectes <br/> <span class="text-slate-300 italic font-light lowercase">d'Expérience</span>.</h3>
       </div>
 
       <div ref="bentoRef" class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -76,35 +76,35 @@ onMounted(async () => {
           v-for="item in testimonials" 
           :key="item.name"
           :class="[
-            'testimonial-card relative glass-dark p-8 rounded-[2.5rem] border border-white/5 hover:border-tinitz-red/30 bg-white/5 transition-all duration-500 group',
+            'testimonial-card relative bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group',
             item.grid
           ]"
         >
-          <div class="absolute top-8 right-8 text-tinitz-red/20 group-hover:text-tinitz-red/40 transition-colors">
-            <Quote :size="48" />
+          <div class="absolute top-8 right-8 text-slate-50 group-hover:text-tinitz-red/10 transition-colors">
+            <Quote :size="58" />
           </div>
           
           <div class="flex gap-1 mb-6 text-tinitz-red">
-            <Star v-for="i in 5" :key="i" :size="16" fill="currentColor" />
+            <Star v-for="i in 5" :key="i" :size="14" fill="currentColor" />
           </div>
 
-          <p class="text-xl font-medium text-white/90 leading-relaxed mb-8 relative z-10">
+          <p class="text-xl font-medium text-slate-600 leading-relaxed mb-10 relative z-10">
             "{{ item.content }}"
           </p>
 
           <div class="flex items-center justify-between mt-auto">
             <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-tinitz-emerald to-tinitz-blue/20 p-[1px]">
-                  <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center font-bold text-xs uppercase text-tinitz-emerald">
+              <div class="w-12 h-12 rounded-full bg-slate-50 p-[1px] border border-slate-100">
+                  <div class="w-full h-full rounded-full bg-white flex items-center justify-center font-black text-xs uppercase text-tinitz-navy">
                     {{ item.name.charAt(0) }}
                   </div>
               </div>
               <div>
-                <div class="font-black text-sm">{{ item.name }}</div>
-                <div class="text-[10px] uppercase font-bold text-white/40 tracking-widest">{{ item.role }}</div>
+                <div class="font-black text-sm text-tinitz-navy">{{ item.name }}</div>
+                <div class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">{{ item.role }}</div>
               </div>
             </div>
-            <div class="text-[10px] font-black text-tinitz-emerald bg-tinitz-emerald/10 px-3 py-1 rounded-full uppercase tracking-widest">
+            <div class="text-[10px] font-black text-tinitz-red bg-red-50 px-3 py-1 rounded-full uppercase tracking-widest">
               {{ item.roi }}
             </div>
           </div>

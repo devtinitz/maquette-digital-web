@@ -35,7 +35,7 @@ const plans = computed(() => [
 <template>
   <section id="pricing" class="py-32 bg-slate-50 relative overflow-hidden">
     <!-- Decor bg -->
-    <div class=""></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-tinitz-navy/5 rounded-full blur-[120px] -z-10"></div>
 
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-20">
@@ -74,7 +74,7 @@ const plans = computed(() => [
               : 'bg-white text-tinitz-navy border border-slate-200 hover:shadow-xl hover:-translate-y-2'
           ]"
         >
-          <div v-if="plan.highlight" class="absolute -top-5 left-1/2 -translate-x-1/2 bg-tinitz-navy text-tinitz-navy text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-lg">
+          <div v-if="plan.highlight" class="absolute -top-5 left-1/2 -translate-x-1/2 bg-tinitz-navy text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-lg">
             Recommandé
           </div>
 
@@ -102,7 +102,7 @@ const plans = computed(() => [
             :class="[
               'w-full py-4 rounded-full font-black text-sm transition-all active:scale-95',
               plan.highlight 
-                ? 'bg-tinitz-navy text-tinitz-navy hover:bg-white shadow-xl' 
+                ? 'bg-white text-tinitz-navy hover:bg-tinitz-navy hover:text-white shadow-xl' 
                 : 'bg-tinitz-navy text-white hover:bg-tinitz-navy'
             ]"
           >
